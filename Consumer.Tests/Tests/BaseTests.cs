@@ -3,11 +3,10 @@ using Xunit.Abstractions;
 
 namespace Consumer.Tests;
 
-public abstract class BaseTests
+public abstract class BaseTests : IClassFixture<TestFixture>
 {
     public BaseTests(ITestOutputHelper output)
     {
-        //TODO
         HttpClientFactory = new HttpClientFactory();
         PactBuilder = new TestSetup().SetupPact(output);
     }

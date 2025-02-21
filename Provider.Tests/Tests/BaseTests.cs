@@ -10,7 +10,6 @@ public abstract class BaseTests : IDisposable
 
     public BaseTests(ITestOutputHelper output)
     {
-        //TODO
         PactVerifier = new TestSetup().SetupPact(output);
         PactBrokerBaseUrl = Environment.GetEnvironmentVariable("PACT_BROKER_BASE_URL");
         PactBrokerToken = Environment.GetEnvironmentVariable("PACT_BROKER_TOKEN");

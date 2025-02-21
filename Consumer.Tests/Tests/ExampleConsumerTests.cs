@@ -6,13 +6,12 @@ using Xunit.Abstractions;
 
 namespace Consumer.Tests;
 
-public class ExampleConsumerTests : BaseTests, IClassFixture<TestFixture>
+public class ExampleConsumerTests : BaseTests
 {
     private readonly ExampleData _exampleData;
 
     public ExampleConsumerTests(ITestOutputHelper output) : base(output)
     {
-        //TODO
         _exampleData = new ExampleData();
     }
 

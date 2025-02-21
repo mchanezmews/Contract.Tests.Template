@@ -6,6 +6,13 @@ namespace Consumer.Tests;
 
 public class PactUtility
 {
+    private readonly HttpClient _httpClient;
+
+    public PactUtility(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
     public async Task<HttpResponseMessage> PublishPactContract
     (
         string pactBrokerBaseUrl,
@@ -36,10 +43,8 @@ public class PactUtility
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         });
         var jsonAsStringContent = new StringContent(serializedContent, Encoding.UTF8, "application/json");
-        //TODO
-        var httpClient = new HttpClient();
-        httpClient.BaseAddress = new Uri(pactBrokerBaseUrl);
-        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", pactBrokerToken);
-        return await httpClient.PostAsync(endpoint, jsonAsStringContent);
+        _httpClient.BaseAddress = new Uri(pactBrokerBaseUrl);
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", pactBrokerToken);
+        return await _httpClient.PostAsync(endpoint, jsonAsStringContent);
     }
 }

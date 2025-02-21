@@ -50,8 +50,7 @@ public class TestFixture : IDisposable
         var pactPath =
             $"{Environment.GetEnvironmentVariable("LOCAL_PACT_FOLDER")}/{_consumerName}-{_providerName}.json";
         var contractBytes = await File.ReadAllBytesAsync(pactPath);
-        //TODO
-        var response = await new PactUtility().PublishPactContract
+        var response = await new PactUtility(new HttpClient()).PublishPactContract
         (
             _pactBrokerBaseUrl,
             _pactBrokerToken,

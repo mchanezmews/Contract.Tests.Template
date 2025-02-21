@@ -22,7 +22,7 @@ public class TestSetup
         };
         return new PactVerifier(config);
     }
-    
+
     private void IsLocal()
     {
         if (Environment.GetEnvironmentVariable("IS_LOCAL") is null)

@@ -2,12 +2,8 @@ using Xunit.Abstractions;
 
 namespace Provider.Tests;
 
-public class ExampleProviderTests : BaseTests
+public class ExampleProviderTests(ITestOutputHelper output) : BaseTests(output)
 {
-    public ExampleProviderTests(ITestOutputHelper output) : base(output)
-    {
-    }
-
     [Fact]
     public void Check_Provider_Honours_Pact_With_Consumer()
     {
