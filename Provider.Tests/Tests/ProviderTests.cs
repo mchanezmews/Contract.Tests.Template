@@ -2,7 +2,7 @@ using Xunit.Abstractions;
 
 namespace Provider.Tests;
 
-public class ExampleProviderTests(ITestOutputHelper output) : BaseTests(output)
+public class ProviderTests(ITestOutputHelper output) : BaseTests(output)
 {
     [Fact]
     public void Check_Provider_Honours_Pact_With_Consumer()

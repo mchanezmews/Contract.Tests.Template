@@ -3,8 +3,9 @@
 ## Set Up
 1. Clone the project from [Contract.Test.Template](https://github.com/MewsSystems/Contract.Tests.Template)
 2. Add .env files in both the Consumer.Tests and Provider.Tests projects, under the root folder (you can use example.env files as template)
-3. Set Up your own data
+3. Set Up your own Tests and Test Data for your Consumer. You can replace ExampleModel, ExampleData and ExampleConsumerTests classes with your own
 4. Run the project for any project from the IDE or using 'dotnet test' command in the project folder
+5. Note: If you would like to run the example tests, please ensure to run the Provider beforehand to see Provider Tests passing (Provider project can be removed as it is for example purposes only)
 
 ## Contribution Rules
 
